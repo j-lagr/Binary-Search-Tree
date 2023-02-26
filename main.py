@@ -26,5 +26,15 @@ class BSTNodes:
             characters += self.right.post_order()
         characters.append(self.node)
         return characters
-        
+    
+    def pre_order(self):
+        characters = []
+        characters.append(self.node)
+        if self.right:
+            characters += self.right.pre_order()
+        if self.left:
+            characters += self.left.pre_order()
+        return characters
+    
+    
         
