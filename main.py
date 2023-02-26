@@ -43,5 +43,10 @@ class BSTNodes:
         if self.left:
             characters += self.left.in_order()
         return characters
-    
+
+def tree(characters):
+    branches = BSTNodes(characters[0])
+    for i in range (1,len(characters)):
+        branches.child_node(characters[i])
+    return branches
         
