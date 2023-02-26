@@ -17,7 +17,7 @@ class BSTNodes:
                 self.right.child_node(node)
             else:
                 self.right = BSTNodes(node)
-    
+                
     def post_order(self):
         characters =[]
         if self.left:
@@ -39,7 +39,7 @@ class BSTNodes:
         characters = []
         if self.right:
             characters += self.right.in_order()
-        elements.append(self.node)
+        characters.append(self.node)
         if self.left:
             characters += self.left.in_order()
         return characters
@@ -49,4 +49,23 @@ def tree(characters):
     for i in range (1,len(characters)):
         branches.child_node(characters[i])
     return branches
-        
+
+if __name__ == "__main__":
+    full_name= ['A','A','R','O','N','J','O','S','H','U','A','C','L','A','G','R','A','T','A']
+    bst_name = tree(full_name)
+    print ("----------------------------------------------------------------")
+    print ("|                 Binary Search Tree Generator                 |")
+    print ("|                                                              |")
+    print ("|                          Given Name                          |")
+    print ("|             A A R O N J O S H U A C L A G R A T A            |")
+    print ("|                                                              |")
+    print ("|                     Post Order Traversal                     |")
+    print ("|", bst_name.post_order() , "|")
+    print ("|                                                              |")
+    print ("|                     Pre Order Traversal                      |")
+    print ("|", bst_name.pre_order() , "|") 
+    print ("|                                                              |")
+    print ("|                      In Order Traversal                      |")
+    print ("|", bst_name.in_order() , "|")
+    print ("|                                                              |")
+    print ("----------------------------------------------------------------")
